@@ -1,5 +1,5 @@
 [package]
-name = "plugin-std"
+name = "parametric-rs-std-plugin"
 version = "0.1.0"
 edition = "2024"
 
