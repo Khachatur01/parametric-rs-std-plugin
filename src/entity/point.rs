@@ -1,10 +1,10 @@
-use std::any::Any;
-use geometry::point::point_2d::Point2D;
-use parametric_rs::entity::{EntityConversionError, Entity, EntityConverter};
-use parametric_rs::param::ParamId;
-use parametric_rs::sketch::Sketch;
 use crate::converter::sketch_shape_converter::shape::Shape;
 use crate::param::f64_param::F64Param;
+use geometry::point::point_2d::Point2D;
+use parametric_rs::entity::{Entity, EntityConversionError, EntityConverter};
+use parametric_rs::param::ParamId;
+use parametric_rs::sketch::Sketch;
+use std::any::Any;
 
 pub struct Point2DEntity {
     pub x: ParamId,

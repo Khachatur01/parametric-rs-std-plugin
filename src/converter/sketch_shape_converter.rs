@@ -1,13 +1,10 @@
 pub mod shape;
 
+use crate::converter::sketch_shape_converter::shape::{AddAsEntity, Shape};
 use parametric_rs::entity::EntityConverter;
 use parametric_rs::sketch::{Sketch, SketchConversionError, SketchConverter};
 use std::any::{Any, TypeId};
 use std::collections::HashMap;
-use crate::converter::sketch_shape_converter::shape::{AddAsEntity, Shape};
-use crate::entity::point::Point2DEntity;
-use crate::entity::segment::Segment2DEntity;
-use crate::param::f64_param::F64Param;
 
 pub struct SketchShapeConverter {
     entity_converters: HashMap<TypeId, Box<dyn EntityConverter<Shape>>>,

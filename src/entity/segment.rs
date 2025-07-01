@@ -1,11 +1,11 @@
-use std::any::Any;
-use geometry::figure::segment::Segment;
-use geometry::point::point_2d::Point2D;
-use parametric_rs::entity::{EntityConversionError, Entity, EntityConverter};
-use parametric_rs::sketch::Sketch;
 use crate::converter::sketch_shape_converter::shape::Shape;
 use crate::entity::point::Point2DEntity;
 use crate::param::f64_param::F64Param;
+use geometry::figure::segment::Segment;
+use geometry::point::point_2d::Point2D;
+use parametric_rs::entity::{Entity, EntityConversionError, EntityConverter};
+use parametric_rs::sketch::Sketch;
+use std::any::Any;
 
 pub struct Segment2DEntity {
     pub start: Point2DEntity,

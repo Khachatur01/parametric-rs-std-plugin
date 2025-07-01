@@ -1,6 +1,6 @@
+use parametric_rs::param::Param;
 use std::any::Any;
 use std::ops::Deref;
-use parametric_rs::param::Param;
 
 pub struct F64Param(pub f64);
 impl Param for F64Param {
