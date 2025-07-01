@@ -1,10 +1,10 @@
 use crate::entity::point::Point2DEntity;
 use crate::entity::segment::Segment2DEntity;
 use crate::param::f64_param::F64Param;
-use geometry::figure::circle::Circle;
-use geometry::figure::mesh::Mesh;
-use geometry::figure::segment::Segment;
-use geometry::point::point_2d::Point2D;
+use geometry_rs::figure::circle::Circle;
+use geometry_rs::figure::mesh::Mesh;
+use geometry_rs::figure::segment::Segment;
+use geometry_rs::point::point_2d::Point2D;
 use parametric_rs::sketch::Sketch;
 
 pub enum Shape {

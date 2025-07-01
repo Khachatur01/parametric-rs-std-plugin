@@ -5,4 +5,4 @@ edition = "2024"
 
 [dependencies]
 parametric-rs = { path = "../parametric-rs" }
-geometry = { path = "../geometry" }
+geometry-rs = { path = "../geometry-rs" }
