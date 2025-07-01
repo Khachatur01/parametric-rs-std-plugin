@@ -2,7 +2,9 @@ use parametric_rs::param::Param;
 use std::any::Any;
 use std::ops::Deref;
 
+#[derive(Clone)]
 pub struct F64Param(pub f64);
+
 impl Param for F64Param {
     fn label(&self) -> Option<String> {
         None
@@ -12,6 +14,7 @@ impl Param for F64Param {
         &self.0
     }
 }
+
 impl Deref for F64Param {
     type Target = f64;
 

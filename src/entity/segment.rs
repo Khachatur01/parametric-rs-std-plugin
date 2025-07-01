@@ -7,6 +7,7 @@ use parametric_rs::entity::{Entity, EntityConversionError, EntityConverter};
 use parametric_rs::sketch::Sketch;
 use std::any::Any;
 
+#[derive(Clone)]
 pub struct Segment2DEntity {
     pub start: Point2DEntity,
     pub end: Point2DEntity,

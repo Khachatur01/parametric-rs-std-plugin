@@ -6,6 +6,7 @@ use parametric_rs::param::ParamId;
 use parametric_rs::sketch::Sketch;
 use std::any::Any;
 
+#[derive(Clone)]
 pub struct Point2DEntity {
     pub x: ParamId,
     pub y: ParamId,
