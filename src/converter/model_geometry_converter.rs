@@ -1,7 +1,7 @@
 mod geometry;
 
 use crate::converter::model_geometry_converter::geometry::Geometry;
-use parametric_rs::model::{Model, ModelConversionError, ModelFrom, ModelInto};
+use parametric_rs::model::{Model, ModelConversionError, ModelInto};
 
 impl ModelInto<Geometry> for Model {
     fn try_into(&self) -> Result<Vec<Geometry>, ModelConversionError> {
@@ -15,11 +15,5 @@ impl ModelInto<Geometry> for Model {
         todo!();
 
         Ok(vec![])
-    }
-}
-
-impl ModelFrom<Geometry> for Model {
-    fn try_from(inputs: &[Geometry]) -> Result<Model, ModelConversionError> {
-        todo!()
     }
 }
