@@ -1,13 +1,12 @@
-use crate::entity::point::Point2DEntity;
-use crate::entity::segment::Segment2DEntity;
-use crate::param::f64_param::F64Param;
 use geometry_rs::figure::circle::Circle;
 use geometry_rs::figure::mesh::Mesh;
 use geometry_rs::figure::segment::Segment;
 use geometry_rs::point::point_2d::Point2D;
+use parametric_rs::entity::{Entity, PointEntity, SegmentEntity};
+use parametric_rs::param::Param;
 use parametric_rs::sketch::Sketch;
 
-pub enum Shape {
+pub enum Geometry {
     Point2D(Point2D),
     Segment2D(Segment<Point2D>),
     Circle(Circle),
@@ -20,40 +19,40 @@ pub trait AddAsEntity {
 
 impl AddAsEntity for Point2D {
     fn add_as_entity(&self, sketch: &mut Sketch) {
-        let x_param_id = sketch.add_param(F64Param(self.x));
-        let y_param_id = sketch.add_param(F64Param(self.y));
+        let x_param_id = sketch.add_param(Param::f64(self.x));
+        let y_param_id = sketch.add_param(Param::f64(self.y));
 
-        let point_entity = Point2DEntity {
+        let point_entity = PointEntity {
             x: x_param_id,
             y: y_param_id,
         };
 
-        sketch.add_entity(point_entity);
+        sketch.add_entity(Entity::Point(point_entity));
     }
 }
 
 impl AddAsEntity for Segment<Point2D> {
     fn add_as_entity(&self, sketch: &mut Sketch) {
-        let start_x_param_id = sketch.add_param(F64Param(self.start().x));
-        let start_y_param_id = sketch.add_param(F64Param(self.start().y));
+        let start_x_param_id = sketch.add_param(Param::f64(self.start().x));
+        let start_y_param_id = sketch.add_param(Param::f64(self.start().y));
 
-        let end_x_param_id = sketch.add_param(F64Param(self.end().x));
-        let end_y_param_id = sketch.add_param(F64Param(self.end().y));
+        let end_x_param_id = sketch.add_param(Param::f64(self.end().x));
+        let end_y_param_id = sketch.add_param(Param::f64(self.end().y));
 
-        let start_point_entity = Point2DEntity {
+        let start_point_entity = PointEntity {
             x: start_x_param_id,
             y: start_y_param_id,
         };
-        let end_point_entity = Point2DEntity {
+        let end_point_entity = PointEntity {
             x: end_x_param_id,
             y: end_y_param_id,
         };
 
-        let segment_entity = Segment2DEntity {
+        let segment_entity = SegmentEntity {
             start: start_point_entity,
             end: end_point_entity,
         };
 
-        sketch.add_entity(segment_entity);
+        sketch.add_entity(Entity::Segment(segment_entity));
     }
 }
